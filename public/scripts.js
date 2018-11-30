@@ -1,18 +1,14 @@
 
 const config = {
   jsSource: [
-    'https://d3js.org/d3.v4.min.js',
-    'https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js',
-    'https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.24.0/d3-legend.min.js',
-    'https://d3js.org/d3-scale-chromatic.v1.min.js',
-    '/scripts/menu-items.js',
-    '/scripts/DataFilter.js',
-    '/scripts/button.js',
-    '/scripts/menu.js',
-    '/scripts/Preloader.js',
-    '/scripts/ForceLayout.js',
-    '/scripts/Modal.js',
-    '/scripts/d3functions.js'
+    'https://code.jquery.com/jquery-3.3.1.min.js',
+    '/scripts/Walls.js',
+    '/scripts/Screen.js',
+    '/scripts/Component.js',
+    '/scripts/Player1.js',
+    '/scripts/collisions.js',
+    '/scripts/events.js',
+    '/scripts/Game.js',
   ],
   contentContainer: 'content',
   menuContainer: 'container-cube',
@@ -49,6 +45,6 @@ const loadJS =  async() => {
     });
   }
   div.parentNode.removeChild(div);
-  menuCreate();
-  initTweening();
+  document.getElementById('gameCanvas').style.display = 'block';
+  startGame();
 }
