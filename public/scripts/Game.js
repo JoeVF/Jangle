@@ -1,12 +1,11 @@
 var canvas, ctx;
-canvas = document.getElementById('gameCanvas');
-ctx = canvas.getContext('2d');
-
 let gamePiece;
 let walls = [];
 
 // ------ONLOAD-----
 const startGame = () => {	
+  canvas = document.getElementById('gameCanvas');
+  ctx = canvas.getContext('2d');
 	// TIME
 	var framesPerSecond = 30;
 	setInterval(updateAll, 1000/framesPerSecond);
