@@ -1,6 +1,12 @@
-class Player1 extends Component {
-	constructor(width, height, color, x, y, type){
+class Player1 extends Component 
+{
+	constructor(width, height, color, x, y, type)
+	{
 		super(width, height, color, x, y, type);
+		this.inventory = 
+		{
+			'keys':[]
+		}
 		this.newPos = function() 
 		{
 			moveThing(this);			
@@ -8,7 +14,8 @@ class Player1 extends Component {
 			this.y += this.speedY;
 			boundaryCheck(this);
 			collisionDetect(this);
-			
+			itemPickUp(this);
 		}
 	}
 }
+

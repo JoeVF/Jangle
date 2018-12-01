@@ -10,7 +10,7 @@ class Component {
 		this.type = type;
 		this.speedX = 0;
 		this.speedY = 0;
-		this.update = function(){
+		this.draw = function(){
 			// Chooses what type, and Draws it
 			if (this.type == "text") 
 			{
@@ -25,6 +25,13 @@ class Component {
 				ctx.arc(this.x, this.y, radius, 0, 2*Math.PI,false);
 				ctx.fillStyle = color;
 				ctx.fill();
+			} else if(this.type == 'image') 
+			{
+        let src = this.color;
+        let xCoor = this.x;
+        let yCoor = this.y;
+				ctx.drawImage(img, xCoor, yCoor);		
+			
 			} 
 			else 
 			{

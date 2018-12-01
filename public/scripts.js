@@ -7,6 +7,8 @@ const config = {
     '/scripts/Component.js',
     '/scripts/Player1.js',
     '/scripts/collisions.js',
+    '/scripts/Items.js',
+    '/scripts/itemPickup.js',
     '/scripts/events.js',
     '/scripts/Game.js',
   ],

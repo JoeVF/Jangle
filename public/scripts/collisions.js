@@ -36,12 +36,12 @@ function collisionDetect(e)
         touching = true;
       }
     if(touching){
-      if(walls[i].color == 'red' && canvas.keys && canvas.keys[65]){
-        console.log('red wall smashed! Not really, though.');
+			if(walls[i].color == 'red' && canvas.keys && canvas.keys[65]
+				&& gamePiece.inventory.keys.includes(key1)){ //.includes(this.door(key)) 
         walls[i]=false; 
       }
     }
-	}
+	}	
 }
 
 // check for canvas edges
