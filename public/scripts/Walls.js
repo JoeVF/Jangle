@@ -1,17 +1,60 @@
-function makeWalls() {
+// check for obstacles
+function collisionDetect(e)
+{
+	for(i=0;i<walls.length;i++)
+	{
+    // collision conditions
+    let touching = false;
+		if(e.right > walls[i].left && 
+			e.left < walls[i].left &&
+			e.top < walls[i].bottom  &&
+			(walls[i].left - e.left) > (e.width -6) && 		
+			e.bottom > walls[i].top) {
+        e.x = walls[i].left - e.width;
+        touching = true;
+      }
+		if(e.left < walls[i].right &&
+			e.right > walls[i].right &&
+			e.top < walls[i].bottom &&
+			(e.right - walls[i].right) > (e.width -6) &&
+			e.bottom > walls[i].top) {
+        e.x = walls[i].right;
+        touching = true;
+      }
+		if(e.bottom > walls[i].top &&
+			e.top < walls[i].top &&
+			e.right > walls[i].left &&
+			e.left < walls[i].right) {
+        e.y = walls[i].top - e.height;
+        touching = true;
+      }
+		if(e.top < walls[i].bottom &&
+			e.bottom > walls[i].top &&
+			e.right > walls[i].left &&
+			e.left < walls[i].right) {
+        e.y = walls[i].bottom;
+        touching = true;
+      }
+    // if(touching){
+		// 	if(walls[i].color == 'red' && canvas.keys && canvas.keys[65]
+		// 		&& gamePiece.inventory.keys.includes(key1)){
+		// 		walls[i]=false; 				
+    //   }
+    // }
+	}	
+}
 
-	door1 = new Component(15, 10, 'red', 220, 60);
-
-	walls.push(new Component (220, 10, 'lightblue', 0, 60));
-	walls.push(new Component (220, 10, 'lightblue', 235, 60));
-	walls.push(new Component (10, 120, 'lightblue', 235, 70));
-	walls.push(new Component (235, 10, 'lightblue', 0, 180));
-	walls.push(new Component (10, 450, 'lightblue', 445, 70));
-
-	walls.push(door1);
-	// walls.push(new Component (10, canvas.height-150, 'lightblue', 445, 70));
-	// walls.push(new Component (10, canvas.height-150, 'lightblue', 445, 70));
-
+// check for canvas edges
+boundaryCheck = function(e)
+{
+	let canvasBottom = canvas.height - e.height;
+	let canvasTop = 0;
+	let canvasRight = canvas.width - e.width;
+	let canvasLeft = 0;
+	if (e.y > canvasBottom) {e.y = canvasBottom;}	
+	if (e.y < canvasTop)    {e.y = canvasTop;}	
+	if (e.x > canvasRight)  {e.x = canvasRight;}	
+	if (e.x < canvasLeft)   {e.x = canvasLeft;}
 }
 
 // update the walls
@@ -22,8 +65,4 @@ function updateWalls(){
 		if(wall){
       wall.draw()}
   })
-}
-// break wall
-function openDoor(){
-  if (canvas.keys && canvas.keys[65]) {turnScreenPink()}
 }

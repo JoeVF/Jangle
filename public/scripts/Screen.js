@@ -6,18 +6,17 @@ function updateAll() {
 
 function moveAll() {
 	gamePiece.newPos();	
-	// erica.newPos();	
 }
 
 function drawAll() {
 	clearScreen();
 	gamePiece.draw();
-	display.text = `The Amazing Game`;
+	// display.text = `The Amazing Game`;
+	// display.draw();
 	updateWalls();
-	updateitems();
-	display.draw();
-	// key1.draw();
-	drawRect(canvas.width/2, canvas.height/2, canvas.width/12, canvas.height/12, 'white');
+	updateItems();	
+	updateDoors();	
+	// drawRect(canvas.width/2, canvas.height/2, canvas.width/12, canvas.height/12, 'white');
 }
 
 // clear the screen

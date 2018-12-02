@@ -13,8 +13,10 @@ class Player1 extends Component
 			this.x += this.speedX;
 			this.y += this.speedY;
 			boundaryCheck(this);
+			doorOpen(this);
 			collisionDetect(this);
 			itemPickUp(this);
+			
 		}
 	}
 }

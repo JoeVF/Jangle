@@ -4,7 +4,7 @@ function itemPickUp(e)
 	for(i=0;i<items.length;i++)
 	{
     // collision conditions
-    let touching = false;
+		let touching = false;
 		if(e.right > items[i].left && 
 			e.left < items[i].left &&
 			e.top < items[i].bottom  &&
@@ -37,7 +37,7 @@ function itemPickUp(e)
       }
     if(touching){
       if(canvas.keys && canvas.keys[65]){
-        e.inventory.keys.push(items[i]);
+				e.inventory.keys.push(items[i]);
         items[i]=false; 
       }
     }
