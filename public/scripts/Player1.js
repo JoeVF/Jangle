@@ -9,7 +9,7 @@ class Player1 extends Component
 		}
 		this.newPos = function() 
 		{
-			moveThing(this);			
+			moveThing(this);	
 			this.x += this.speedX;
 			this.y += this.speedY;
 			boundaryCheck(this);

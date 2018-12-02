@@ -10,13 +10,14 @@ function moveAll() {
 
 function drawAll() {
 	clearScreen();
-	gamePiece.draw();
-	// display.text = `The Amazing Game`;
-	// display.draw();
+	makeFloor(stoneFloor3);
+	if(display){display.draw()};
 	updateWalls();
 	updateItems();	
 	updateDoors();	
-	// drawRect(canvas.width/2, canvas.height/2, canvas.width/12, canvas.height/12, 'white');
+	gamePiece.draw();
+	
+
 }
 
 // clear the screen
@@ -27,7 +28,7 @@ function clearScreen(){
 // sample function tied to 'b' key
 function turnScreenPink(){
 	console.log('Sample event fired.');
-	canvas.style.backgroundColor = 'pink';
+	makeLevelTwo();
 }
 
 function drawRect(x, y, width, height, color){

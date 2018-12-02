@@ -30,7 +30,7 @@ class Component {
         let src = this.color;
         let xCoor = this.x;
         let yCoor = this.y;
-				ctx.drawImage(img, xCoor, yCoor);
+				ctx.drawImage(src, xCoor, yCoor);
 			
 			} 
 			else 

@@ -61,6 +61,10 @@ function doorOpen(e)
         if(e.inventory.keys[i] &&
           (e.inventory.keys[i].itemName == (doors[i].keyForThisDoor))) {
         doors[i]=false;
+        let click = new Audio('sound/click02.ogg');
+        click.play();
+        } else {
+          displayCaption(e, 'It\'s Locked!')
         }
       }
     }

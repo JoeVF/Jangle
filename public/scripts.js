@@ -3,6 +3,7 @@ const config = {
   jsSource: [
     'https://code.jquery.com/jquery-3.3.1.min.js',
     '/scripts/Walls.js',
+    '/scripts/images.js',
     '/scripts/Screen.js',
     '/scripts/Component.js',
     '/scripts/Player1.js',

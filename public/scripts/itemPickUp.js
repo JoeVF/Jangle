@@ -38,6 +38,8 @@ function itemPickUp(e)
     if(touching){
       if(canvas.keys && canvas.keys[65]){
 				e.inventory.keys.push(items[i]);
+				let hit = new Audio('sound/hit.ogg');
+				hit.play();
         items[i]=false; 
       }
     }

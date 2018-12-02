@@ -2,10 +2,11 @@ let canvas, ctx;
 let gamePiece;
 let walls = [];
 let items = [];
-let key1, key2, key3;
-let img = document.getElementById('img');
+
+
+
 let doors = [];
-// let doorKeys = [];
+
 
 
 // ------ONLOAD-----
@@ -14,16 +15,30 @@ const startGame = () => {
   ctx = canvas.getContext('2d');
 	// TIME
 	var framesPerSecond = 30;
-	setInterval(updateAll, 1000/framesPerSecond);
-	
-	gamePiece = new Player1(15, 15, 'green',50, 10);
-	makeLevel();	
+	setInterval(updateAll, 1000/framesPerSecond);	
+	gamePiece = new Player1(15, 15, playerN ,50, 10, 'image');
+	makeLevelOne();	
+	displayMessage('Level One', 2000);	
 }
 
-function makeLevel(){
-	makeWalls();
-	makeItems();
-	makeDoors();
+function displayMessage(text, seconds){
+	display = new Component('20px','Arial','white',25, canvas.height-60,'text');
+	display.text = text;
+	setTimeout(function(){
+		display = false
+	},seconds);
 }
 
-// display = new Component('20px','Arial','white',30, canvas.height-60,'text');
+function displayCaption(e, text){
+	display = new Component('10px','Monospace','white',e.right, e.top -2, 'text');
+	display.text = text;	
+	setTimeout(function(){
+		display = false
+	}, 2000);
+}
+
+function playSewer(){
+	let sewer = new Audio('sound/sewer.mp3');
+	sewer.play();
+}
+

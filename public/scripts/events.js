@@ -16,6 +16,33 @@ function moveThing(e) {
   if (canvas.keys && canvas.keys[39]) {e.speedX = walkingSpeed}
   if (canvas.keys && canvas.keys[38]) {e.speedY = -walkingSpeed}
 	if (canvas.keys && canvas.keys[40]) {e.speedY = walkingSpeed}
-	if (canvas.keys && canvas.keys[66]) {turnScreenPink()}
+	if (canvas.keys && canvas.keys[66]) {makeLevelTwo()}
+	
+	let prevX = e.x - e.speedX;
+	let prevY = e.y - e.speedY;
+	if(prevX < e.x){
+		gamePiece.color = playerE;
+	}
+	if(prevX > e.x){
+		gamePiece.color = playerW;
+	}
+	if(prevY < e.y){
+		gamePiece.color = playerS;
+	}
+	if(prevY > e.y){
+		gamePiece.color = playerN;
+	}
+	if(prevX < e.x && prevY < e.y){
+		gamePiece.color = playerSE;
+	}
+	if(prevX < e.x && prevY > e.y){
+		gamePiece.color = playerNE;
+	}
+	if(prevX > e.x && prevY < e.y){
+		gamePiece.color = playerSW;
+	}
+	if(prevX > e.x && prevY > e.y){
+		gamePiece.color = playerNW;
+	}
 }
 
