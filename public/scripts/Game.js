@@ -16,7 +16,7 @@ const startGame = () => {
 	// TIME
 	var framesPerSecond = 30;
 	setInterval(updateAll, 1000/framesPerSecond);	
-	gamePiece = new Player1(15, 15, playerN ,50, 10, 'image');
+	gamePiece = new Player1(18, 18, playerN ,50, 10, 'image', 0, 0);
 	makeLevelOne();	
 	displayMessage('Level One', 2000);	
 }

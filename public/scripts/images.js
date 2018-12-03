@@ -1,14 +1,14 @@
-let img = new Image();
-let stoneFloor = new Image();
-let stoneFloor3 = new Image();
-let wall02 = new Image();
-let wall03 = new Image();
-let wall03V = new Image();
-let	wallCorner01 = new Image();
+let img =           new Image();
+let stoneFloor =    new Image();
+let stoneFloor3 =   new Image();
+let wall02 =        new Image();
+let wall03 =        new Image();
+let wall03V =       new Image();
+let	wallCorner01 =  new Image();
 let wallCorner01V = new Image();
-let wall03VHalf = new Image();
-let floor01 = new Image();
-let grass01	= new Image();
+let wall03VHalf =   new Image();
+let floor01 =       new Image();
+let grass01	=       new Image();
 
 let playerN = new Image();
 let playerS = new Image();
@@ -20,6 +20,7 @@ let playerSE = new Image();
 let playerNW = new Image();
 let playerSW = new Image();
 
+let spriteSheet = new Image();
 
 playerN.src = ('images/player1N.png');
 playerS.src = ('images/player1S.png');
@@ -30,6 +31,8 @@ playerSE.src = ('images/player1SE.png');
 playerSW.src = ('images/player1SW.png');
 playerNW.src = ('images/player1NW.png');
 playerNE.src = ('images/player1NE.png');
+
+spriteSheet.src = ('images/spriteSheet.png')
 
 img.src = ('images/key.jpg');
 stoneFloor.src = ('images/stone_floor.jpg');
