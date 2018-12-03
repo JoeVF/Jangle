@@ -40,17 +40,22 @@ function moveThing(e) {
 		e.frameY = 54;
 		takeStep();
 	}
-	if(prevX < e.x && prevY < e.y){
-		gamePiece.color = playerSE;
+	if(prevX < e.x && prevY < e.y){ // SE
+		e.frameY = 90;
+		takeStep();
 	}
-	if(prevX < e.x && prevY > e.y){
-		gamePiece.color = playerNE;
+	if(prevX < e.x && prevY > e.y){ // NE
+		e.frameY = 72;
+		takeStep();
 	}
-	if(prevX > e.x && prevY < e.y){
-		gamePiece.color = playerSW;
+	if(prevX > e.x && prevY < e.y){ // SW
+		e.frameY = 108;
+		takeStep();
+		console.log('Going SW');
 	}
 	if(prevX > e.x && prevY > e.y){
-		gamePiece.color = playerNW;
+		e.frameY = 126;
+		takeStep();
 	}
 
 	function takeStep(){
